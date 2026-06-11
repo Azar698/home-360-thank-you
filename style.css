@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #7de8f5 0%, #a78bfa 50%, #c084fc 100%);
+    padding: 24px;
+}
+
+/* Decorative Background */
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+body::before {
+    width: 500px;
+    height: 500px;
+    bottom: -120px;
+    left: -80px;
+    background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    bottom: -80px;
+    right: -60px;
+    background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+}
+
+/* Card */
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(99, 70, 200, 0.18);
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+
+.card-header {
+    background: linear-gradient(
+        90deg,
+        #5b8dee 0%,
+        #7c63d5 50%,
+        #9b59b6 100%
+    );
+    padding: 32px 24px 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.card-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Body */
+
+.card-body {
+    padding: 40px 32px 32px;
+    text-align: center;
+    background: #f8f8fb;
+}
+
+.check-circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2.5px solid #7c63d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.check-circle svg {
+    width: 36px;
+    height: 36px;
+    stroke: #7c63d5;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card-body h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+
+.subtext {
+    font-size: 0.92rem;
+    color: #6b7280;
+    line-height: 1.6;
+    max-width: 300px;
+    margin: 0 auto 28px;
+}
+
+/* Button */
+
+.btn-home {
+    display: inline-block;
+    background: linear-gradient(90deg, #5b8dee 0%, #7c63d5 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 40px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-home:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Divider */
+
+.divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 32px 0 24px;
+}
+
+/* Social */
+
+.follow-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.8px solid currentColor;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.icon-instagram {
+    color: #e1306c;
+}
+
+.icon-facebook {
+    color: #1877f2;
+}
+
+.icon-youtube {
+    color: #ff0000;
+}
+
+.icon-website {
+    color: #7073df;
+}
+
+/* Mobile */
+
+@media (max-width: 400px) {
+    .card-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .card-body {
+        padding: 28px 20px 24px;
+    }
+
+    .card-body h2 {
+        font-size: 1.3rem;
+    }
+
+    .check-circle {
+        width: 72px;
+        height: 72px;
+    }
+
+    .check-circle svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+}
