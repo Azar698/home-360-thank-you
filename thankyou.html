@@ -1,0 +1,261 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You – Home 360 × Nexion IIID</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+  <style>
+       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Cyan-to-purple diagonal gradient background */
+      background: linear-gradient(135deg, #7de8f5 0%, #a78bfa 50%, #c084fc 100%);
+      padding: 24px;
+    }
+ 
+    /* Decorative swoosh shapes behind card */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    body::before {
+      width: 500px; height: 500px;
+      bottom: -120px; left: -80px;
+      background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+    }
+    body::after {
+      width: 400px; height: 400px;
+      bottom: -80px; right: -60px;
+      background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+    }
+ 
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 20px 60px rgba(99, 70, 200, 0.18);
+      position: relative;
+      z-index: 1;
+    }
+ 
+    /* ── Header ── */
+    .card-header {
+      background: linear-gradient(90deg, #5b8dee 0%, #7c63d5 50%, #9b59b6 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .card-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .card-header p {
+      font-size: 0.9rem;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+ 
+    /* ── Body ── */
+    .card-body {
+      padding: 40px 32px 32px;
+      text-align: center;
+      background: #f8f8fb;
+    }
+ 
+    /* Checkmark circle */
+    .check-circle {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 2.5px solid #7c63d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      background: transparent;
+    }
+    .check-circle svg {
+      width: 36px;
+      height: 36px;
+      stroke: #7c63d5;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+ 
+    .card-body h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    .card-body .subtext {
+      font-size: 0.92rem;
+      color: #6b7280;
+      line-height: 1.6;
+      max-width: 300px;
+      margin: 0 auto 28px;
+    }
+ 
+    /* Button */
+    .btn-home {
+      display: inline-block;
+      background: linear-gradient(90deg, #5b8dee 0%, #7c63d5 100%);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 13px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-home:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-home:active { transform: translateY(0); }
+ 
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 32px 0 24px;
+    }
+ 
+    /* Follow Us */
+    .follow-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1.8px solid currentColor;
+      transition: transform 0.2s, opacity 0.2s;
+      text-decoration: none;
+    }
+    .social-icons a:hover { transform: translateY(-2px); opacity: 0.8; }
+ 
+    /* Individual brand colours for icon borders + strokes */
+    .icon-instagram { color: #e1306c; }
+    .icon-facebook  { color: #1877f2; }
+    .icon-youtube   { color: #ff0000; }
+    .icon-website   { color: #7c63d5; }
+ 
+    .social-icons a svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+ 
+    /* ── Small screens (< 400px) ── */
+    @media (max-width: 400px) {
+      .card-header h1 { font-size: 1.6rem; }
+      .card-body { padding: 28px 20px 24px; }
+      .card-body h2 { font-size: 1.3rem; }
+      .check-circle { width: 72px; height: 72px; }
+      .check-circle svg { width: 28px; height: 28px; }
+      .social-icons { gap: 10px; }
+      .social-icons a { width: 40px; height: 40px; }
+    }
+  </style>
+
+  <html>
+    <body>
+ 
+  <div class="card">
+ 
+    <!-- Header -->
+    <div class="card-header">
+      <h1>Thank You!</h1>
+      <p>Home 360 × Nexion IIID Showcase Insider X 2026</p>
+    </div>
+ 
+    <!-- Body -->
+    <div class="card-body">
+ 
+      <!-- Checkmark -->
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+ 
+      <h2>Thanks for Registering!</h2>
+      <p class="subtext">We appreciate your interest. Our team will get in touch with you soon.</p>
+ 
+      <a href="https://forms.zoho.in/22kraftsmediaworksgm1/form/EventRegistration" class="btn-home">Back to Home</a>
+ 
+      <div class="divider"></div>
+ 
+      <p class="follow-label">Follow Us</p>
+      <div class="social-icons">
+ 
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/home360degree/" target="_blank" rel="noopener" class="icon-instagram" aria-label="Instagram">
+          <i class="fa-brands fa-instagram fa-lg" style="color: rgb(225, 48, 108);"></i>
+        </a>
+ 
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/Homes360degree/" target="_blank" rel="noopener" class="icon-facebook" aria-label="Facebook">
+          <i class="fa-brands fa-facebook fa-lg" style="color: rgb(24, 119, 242);"></i>
+        </a>
+ 
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@Home360Degree-Jubileehills/" target="_blank" rel="noopener" class="icon-youtube" aria-label="YouTube">
+         <i class="fa-brands fa-youtube fa-lg" style="color: rgb(255, 0, 0);"></i>
+        </a>
+ 
+        <!-- Website / Globe -->
+        <a href="https://home360degree.com/" target="_blank" rel="noopener" class="icon-website" aria-label="Website">
+          <i class="fa-solid fa-globe fa-lg" style="color: rgb(112, 115, 223);"></i>
+        </a>
+ 
+      </div>
+    </div>
+ 
+  </div>
+ 
+</body>
+</html>
+
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+</head>
