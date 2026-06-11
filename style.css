@@ -1,236 +1,410 @@
+/* ==========================================
+   HOME360 THANK YOU PAGE
+   ========================================== */
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --home360-blue: #1F3F8A;
+    --home360-green: #76A84A;
+    --home360-dark: #23306F;
+    --home360-light: #F5F7FA;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --border-color: #E5E7EB;
 }
 
 body {
     font-family: 'Inter', sans-serif;
+
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #7de8f5 0%, #a78bfa 50%, #c084fc 100%);
+
     padding: 24px;
+
+    background:
+        url("images/home-360-form-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Decorative Background */
-
-body::before,
-body::after {
-    content: '';
-    position: fixed;
-    border-radius: 50%;
-    opacity: 0.25;
-    pointer-events: none;
-}
-
-body::before {
-    width: 500px;
-    height: 500px;
-    bottom: -120px;
-    left: -80px;
-    background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-}
-
-body::after {
-    width: 400px;
-    height: 400px;
-    bottom: -80px;
-    right: -60px;
-    background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-}
-
-/* Card */
+/* ==========================================
+   CARD
+   ========================================== */
 
 .card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
+
     width: 100%;
-    max-width: 480px;
-    box-shadow: 0 20px 60px rgba(99, 70, 200, 0.18);
-    position: relative;
-    z-index: 1;
+    max-width: 550px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(31, 63, 138, 0.08),
+        0 20px 50px rgba(31, 63, 138, 0.08);
 }
 
-/* Header */
+/* ==========================================
+   HEADER
+   ========================================== */
 
 .card-header {
-    background: linear-gradient(
-        90deg,
-        #5b8dee 0%,
-        #7c63d5 50%,
-        #9b59b6 100%
-    );
-    padding: 32px 24px 28px;
+
+    background: var(--home360-blue);
+
     text-align: center;
+
+    padding: 40px 30px;
+
     color: #ffffff;
 }
 
 .card-header h1 {
+
     font-size: 2rem;
+
     font-weight: 700;
-    margin-bottom: 6px;
+
+    margin-bottom: 8px;
 }
 
 .card-header p {
-    font-size: 0.9rem;
-    opacity: 0.9;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+    opacity: 0.95;
 }
 
-/* Body */
+/* Optional Logo */
+
+.logo {
+    width: 180px;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+/* ==========================================
+   BODY
+   ========================================== */
 
 .card-body {
-    padding: 40px 32px 32px;
+
+    padding: 45px 35px;
+
     text-align: center;
-    background: #f8f8fb;
 }
 
+/* ==========================================
+   SUCCESS ICON
+   ========================================== */
+
 .check-circle {
-    width: 88px;
-    height: 88px;
+
+    width: 90px;
+    height: 90px;
+
     border-radius: 50%;
-    border: 2.5px solid #7c63d5;
+
+    border: 3px solid var(--home360-green);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     margin: 0 auto 24px;
 }
 
 .check-circle svg {
-    width: 36px;
-    height: 36px;
-    stroke: #7c63d5;
-    stroke-width: 2.5;
+
+    width: 38px;
+    height: 38px;
+
+    stroke: var(--home360-green);
+
+    stroke-width: 3;
+
     fill: none;
+
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
+/* ==========================================
+   TEXT
+   ========================================== */
+
 .card-body h2 {
-    font-size: 1.6rem;
+
+    color: var(--home360-blue);
+
+    font-size: 1.75rem;
+
     font-weight: 700;
-    color: #1a1a2e;
+
     margin-bottom: 12px;
 }
 
 .subtext {
-    font-size: 0.92rem;
-    color: #6b7280;
-    line-height: 1.6;
-    max-width: 300px;
-    margin: 0 auto 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    max-width: 420px;
+
+    margin: 0 auto 30px;
 }
 
-/* Button */
+/* ==========================================
+   BUTTON
+   ========================================== */
 
 .btn-home {
+
     display: inline-block;
-    background: linear-gradient(90deg, #5b8dee 0%, #7c63d5 100%);
-    color: #ffffff;
+
     text-decoration: none;
-    padding: 13px 40px;
-    border-radius: 50px;
+
+    background: var(--home360-green);
+
+    color: #ffffff;
+
+    padding: 14px 32px;
+
+    border-radius: 999px;
+
     font-size: 0.95rem;
+
     font-weight: 600;
-    transition: 0.2s;
+
+    transition: all 0.3s ease;
 }
 
 .btn-home:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+
+    background: #678f40;
+
+    transform: translateY(-2px);
 }
 
-/* Divider */
+/* ==========================================
+   DIVIDER
+   ========================================== */
 
 .divider {
+
     height: 1px;
-    background: #e5e7eb;
-    margin: 32px 0 24px;
+
+    background: var(--border-color);
+
+    margin: 35px 0 25px;
 }
 
-/* Social */
+/* ==========================================
+   FOLLOW LABEL
+   ========================================== */
 
 .follow-label {
-    font-size: 0.88rem;
+
+    font-size: 0.95rem;
+
     font-weight: 600;
-    color: #374151;
-    margin-bottom: 16px;
+
+    color: var(--home360-dark);
+
+    margin-bottom: 18px;
 }
 
+/* ==========================================
+   SOCIAL ICONS
+   ========================================== */
+
 .social-icons {
+
     display: flex;
+
     justify-content: center;
+
+    align-items: center;
+
     gap: 16px;
+
+    flex-wrap: wrap;
 }
 
 .social-icons a {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 1.8px solid currentColor;
+
+    border: 2px solid currentColor;
+
     text-decoration: none;
-    transition: 0.2s;
+
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: translateY(-2px);
-    opacity: 0.8;
+
+    transform: translateY(-3px);
+
+    opacity: 0.85;
 }
 
+/* Official Brand Colors */
+
 .icon-instagram {
-    color: #e1306c;
+    color: #E1306C;
 }
 
 .icon-facebook {
-    color: #1877f2;
+    color: #1877F2;
 }
 
 .icon-youtube {
-    color: #ff0000;
+    color: #FF0000;
 }
 
 .icon-website {
-    color: #7073df;
+    color: #7073DF;
 }
 
-/* Mobile */
+/* ==========================================
+   TABLET
+   ========================================== */
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .card-header {
+
+        padding: 35px 24px;
+    }
+
     .card-header h1 {
-        font-size: 1.6rem;
+
+        font-size: 1.8rem;
     }
 
     .card-body {
-        padding: 28px 20px 24px;
+
+        padding: 35px 24px;
     }
 
     .card-body h2 {
-        font-size: 1.3rem;
+
+        font-size: 1.55rem;
+    }
+
+    .subtext {
+
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .card {
+
+        border-radius: 16px;
+    }
+
+    .card-header {
+
+        padding: 30px 20px;
+    }
+
+    .card-header h1 {
+
+        font-size: 1.6rem;
+    }
+
+    .card-header p {
+
+        font-size: 0.85rem;
+    }
+
+    .card-body {
+
+        padding: 30px 20px;
     }
 
     .check-circle {
-        width: 72px;
-        height: 72px;
+
+        width: 75px;
+        height: 75px;
     }
 
     .check-circle svg {
-        width: 28px;
-        height: 28px;
+
+        width: 30px;
+        height: 30px;
+    }
+
+    .card-body h2 {
+
+        font-size: 1.35rem;
+    }
+
+    .subtext {
+
+        font-size: 0.92rem;
+    }
+
+    .btn-home {
+
+        width: 100%;
+
+        max-width: 280px;
+
+        padding: 14px 20px;
     }
 
     .social-icons {
-        gap: 10px;
+
+        gap: 12px;
     }
 
     .social-icons a {
-        width: 40px;
-        height: 40px;
+
+        width: 42px;
+        height: 42px;
     }
 }
